@@ -1,4 +1,4 @@
-*visincr.txt*	The Visual Incrementing Tool		Feb 18, 2016
+*visincr.txt*	The Visual Incrementing Tool		Nov 22, 2017
 
 Author:  Charles E. Campbell  <NdrchipO@ScampbellPfamily.AbizM>
 	  (remove NOSPAM from Campbell's email before using)
@@ -555,6 +555,8 @@ MONTHNAME INCREMENTING EXAMPLES
 		09/24/15	* Handles :behave mswin gracefully
 		02/18/16	* Changed =~ matching to =~# or
 				  =~?, as and when appropriate
+		11/22/17	* :I and :II weren't picking up on an initial
+				  negative number.  Fixed.
 	v19:	12/19/07	: neglected to include calutil on the upload to
 				  vim.sf.net, so a new version was made that
 				  included it.

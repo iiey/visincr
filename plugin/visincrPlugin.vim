@@ -13,22 +13,22 @@
 if &cp || exists("g:loaded_visincrPlugin")
   finish
 endif
-let g:loaded_visincrPlugin = "v21g"
+let g:loaded_visincrPlugin = "v21h"
 let s:keepcpo              = &cpo
 set cpo&vim
 
 " ---------------------------------------------------------------------
 "  Methods: {{{1
-let s:I      = 0
-let s:II     = 1
-let s:IMOD   = 2
-let s:IREP   = 3
-let s:IMDY   = 4
-let s:IYMD   = 5
-let s:IDMY   = 6
-let s:ID     = 7
-let s:IM     = 8
-let s:IA     = 9
+let s:I      = 0 
+let s:II     = 1 
+let s:IMOD   = 2 
+let s:IREP   = 3 
+let s:IMDY   = 4 
+let s:IYMD   = 5 
+let s:IDMY   = 6 
+let s:ID     = 7 
+let s:IM     = 8 
+let s:IA     = 9 
 let s:IX     = 10
 let s:IIX    = 11
 let s:IB     = 12

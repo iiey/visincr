@@ -1,7 +1,7 @@
 " visincr.vim: Visual-block incremented lists
 "  Author:      Charles E. Campbell
-"  Date:        Feb 18, 2016
-"  Version:     21g	ASTRO-ONLY
+"  Date:        Nov 22, 2017
+"  Version:     21h	ASTRO-ONLY
 "
 "				Visincr assumes that a block of numbers selected by a
 "				ctrl-v (visual block) has been selected for incrementing.
@@ -25,7 +25,7 @@
 if &cp || exists("g:loaded_visincr")
   finish
 endif
-let g:loaded_visincr = "v21g"
+let g:loaded_visincr = "v21h"
 if v:version < 700
  echohl WarningMsg
  echo "***warning*** this version of visincr needs vim 7.0"
@@ -580,21 +580,21 @@ fun! visincr#VisBlockIncr(method,...)
    " region not beginning at far left
 "   call Decho("handle visblock not at far left")
    if method == s:IX || method == s:IIX
-    let pat = '^\(.\{-}\)\%'.leftcol.'v\([0-9a-fA-F \t]\{1,'.rmlp1.'}\).*$'
+    let pat = '^\(.\{-}\)\%'.leftcol.'v\([-0-9a-fA-F \t]\{1,'.rmlp1.'}\).*$'
    elseif method == s:IB || method == s:IIB
     let pat = '^\(.\{-}\)\%'.leftcol.'v\([01 \t]\{1,'.rmlp1.'}\).*$'
    elseif method == s:IO || method == s:IIO
     let pat = '^\(.\{-}\)\%'.leftcol.'v\([0-7 \t]\{1,'.rmlp1.'}\).*$'
    elseif method == s:IR || method == s:IIR
-"    call Decho('test: ^\(.\{-}\)\%'.leftcol.'v\([0-9 \t]\{1,'.rmlp1.'}\).*$')
-    if getline(".") =~ '^\(.\{-}\)\%'.leftcol.'v\([0-9 \t]\{1,'.rmlp1.'}\).*$'
+"    call Decho('test: ^\(.\{-}\)\%'.leftcol.'v\([-0-9 \t]\{1,'.rmlp1.'}\).*$')
+    if getline(".") =~ '^\(.\{-}\)\%'.leftcol.'v\([-0-9 \t]\{1,'.rmlp1.'}\).*$'
 	 " need to convert arabic notation to roman numeral
      let pat = '^\(.\{-}\)\%'.leftcol.'v\([0-9IVXCLM \t]\{1,'.rmlp1.'}\).*$'
 	else
      let pat = '^\(.\{-}\)\%'.leftcol.'v\([IVXCLM \t]\{1,'.rmlp1.'}\).*$'
 	endif
    else
-    let pat = '^\(.\{-}\)\%'.leftcol.'v\([0-9 \t]\{1,'.rmlp1.'}\).*$'
+    let pat = '^\(.\{-}\)\%'.leftcol.'v\([-0-9 \t]\{1,'.rmlp1.'}\).*$'
    endif
 "   call Decho("pat<".pat.">")
    let cnt = substitute(getline("'<"),pat,'\2',"")
